@@ -1,4 +1,4 @@
-# THETAVID
+# NFTance
 This project is a decentralized video marketplace built on the Theta blockchain. It allows users to mint, buy, sell, and trade video NFTs. The platform leverages Web3 technologies to ensure transparency, security, and decentralized ownership of digital assets.
 ## Tech Stack
 ### Frontend
