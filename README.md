@@ -58,21 +58,21 @@ Start the Game
     - Upload Video & Metadata: Users upload their video to IPFS and provide metadata like title and description.
     - Mint NFT: The createNFT function in VideoNFT.sol mints the video and metadata as an NFT on the blockchain.
 
-![Gameplay](https://i.postimg.cc/ZK75BSJK/img1.jpg)
+![Gameplay](https://i.postimg.cc/VkCq3vSP/img11.jpg.jpg)
 
 
 - Listing NFT for Sale
     - Set Sale Price: Users set the price for their NFT.
     - List on Marketplace: The Mapitem function in Marketplace.sol lists the NFT and marks it for sale.
 
-![Gameplay](https://i.postimg.cc/Gh5b3xj4/img2.jpg)
+![Gameplay](https://i.postimg.cc/RFXKcnYK/img22.jpg)
 
 
 - Marketplace Browsing
     - Browse NFTs: Users explore available NFTs using filter options.
     - Preview Video: Users watch a short preview of the video before purchasing.
 
- ![Gameplay](https://i.postimg.cc/Wb32PH0R/img3.jpg)
+ ![Gameplay](https://i.postimg.cc/8kYrNDgp/img33.jpg)
 
 
 
@@ -80,7 +80,7 @@ Start the Game
     - Select NFT: Choose the NFT to buy.
     - Complete Purchase: Process the transaction to transfer ownership.
  
-![Gameplay](https://i.postimg.cc/Xq24CfSD/img4.jpg)
+![Gameplay](https://i.postimg.cc/vDRB9YG5/img44.jpg)
 
 
   
