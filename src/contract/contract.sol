@@ -1,26 +1,26 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract NFTMarketplace is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenid;
     Counters.Counter private _tokens_sold;
-    address owner;
+    address public owner;
 
     struct NFT_data {
-        uint256 tokenid;
-        address owner;
-        address sender;
-        uint256 price;
-        bool outforsale;
-        string videoURL;
-        string videoName;
-        string videoDescription;
-        string videoCategory;
+        uint256 tokenid;             // uint256: Unique identifier for the NFT
+        address owner;               // address: Current owner of the NFT
+        address sender;              // address: Original creator or sender of the NFT
+        uint256 price;               // uint256: Price of the NFT in wei
+        bool outforsale;             // bool: Status indicating if the NFT is for sale
+        string videoURL;            // string: URL of the video associated with the NFT
+        string videoName;           // string: Name of the video
+        string videoDescription;    // string: Description of the video
+        string videoCategory;       // string: Category of the video
+        string isvideo;                // string: Type of the NFT
     }
 
     mapping(uint256 => NFT_data) public map;
@@ -43,23 +43,25 @@ contract NFTMarketplace is ERC721URIStorage {
         string memory videoURL,
         string memory videoName,
         string memory videoDescription,
-        string memory videoCategory
+        string memory videoCategory,
+        string memory isvideo // New parameter for type
     ) public returns (uint256) {
         uint256 currentTokenId = _tokenid.current();
         _mint(msg.sender, currentTokenId);
         _setTokenURI(currentTokenId, tokenURI);
-        Mapitem(currentTokenId, price, videoURL, videoName, videoDescription, videoCategory);
+        mapItem(currentTokenId, price, videoURL, videoName, videoDescription, videoCategory, isvideo);
         _tokenid.increment();
         return currentTokenId;
     }
 
-    function Mapitem(
+    function mapItem(
         uint256 _id,
         uint256 price,
         string memory videoURL,
         string memory videoName,
         string memory videoDescription,
-        string memory videoCategory
+        string memory videoCategory,
+        string memory isvideo // New parameter for type
     ) internal {
         _transfer(msg.sender, address(this), _id);
         map[_id] = NFT_data(
@@ -71,7 +73,8 @@ contract NFTMarketplace is ERC721URIStorage {
             videoURL,
             videoName,
             videoDescription,
-            videoCategory
+            videoCategory,
+            isvideo // Assign the type field
         );
     }
 
@@ -84,7 +87,8 @@ contract NFTMarketplace is ERC721URIStorage {
         string memory,
         string memory,
         string memory,
-        string memory
+        string memory,
+        string memory // Return the type field
     ) {
         NFT_data memory nft = map[tokenId];
         return (
@@ -96,13 +100,14 @@ contract NFTMarketplace is ERC721URIStorage {
             nft.videoURL,
             nft.videoName,
             nft.videoDescription,
-            nft.videoCategory
+            nft.videoCategory,
+            nft.isvideo // Return the type field
         );
     }
 
     function resale(uint256 _id) public {
-        require(!map[_id].outforsale, "already up for sale");
-        require(map[_id].owner == msg.sender, "caller is not the owner");
+        require(!map[_id].outforsale, "Already up for sale");
+        require(map[_id].owner == msg.sender, "Caller is not the owner");
         _transfer(msg.sender, address(this), _id);
         map[_id].owner = address(this);
         map[_id].outforsale = true;
@@ -111,12 +116,12 @@ contract NFTMarketplace is ERC721URIStorage {
         }
     }
 
-    function setprice(uint256 id, uint256 price) public {
-        require(map[id].sender == msg.sender, "caller is not the seller");
+    function setPrice(uint256 id, uint256 price) public {
+        require(map[id].sender == msg.sender, "Caller is not the seller");
         map[id].price = price;
     }
 
-    function buynft(uint256 _id) public payable {
+    function buyNFT(uint256 _id) public payable {
         require(map[_id].outforsale, "NFT not for sale");
         require(msg.value == map[_id].price, "Incorrect price");
         _transfer(address(this), msg.sender, _id);
@@ -127,15 +132,15 @@ contract NFTMarketplace is ERC721URIStorage {
         _tokens_sold.increment();
     }
 
-    function allmynftsnotforsale() public view returns (NFT_data[] memory) {
+    function allMyNFTsNotForSale() public view returns (NFT_data[] memory) {
         uint256 count = 0;
         for (uint256 i = 0; i < _tokenid.current(); i++) {
             if (map[i].owner == msg.sender && !map[i].outforsale) {
                 count++;
             }
         }
-        uint256 index = 0;
         NFT_data[] memory temp = new NFT_data[](count);
+        uint256 index = 0;
         for (uint256 i = 0; i < _tokenid.current(); i++) {
             if (map[i].owner == msg.sender && !map[i].outforsale) {
                 temp[index] = map[i];
@@ -145,15 +150,15 @@ contract NFTMarketplace is ERC721URIStorage {
         return temp;
     }
 
-    function allmynfts() public view returns (NFT_data[] memory) {
+    function allMyNFTs() public view returns (NFT_data[] memory) {
         uint256 count = 0;
         for (uint256 i = 0; i < _tokenid.current(); i++) {
             if (map[i].sender == msg.sender) {
                 count++;
             }
         }
-        uint256 index = 0;
         NFT_data[] memory temp = new NFT_data[](count);
+        uint256 index = 0;
         for (uint256 i = 0; i < _tokenid.current(); i++) {
             if (map[i].sender == msg.sender) {
                 temp[index] = map[i];
@@ -163,10 +168,10 @@ contract NFTMarketplace is ERC721URIStorage {
         return temp;
     }
 
-    function nftsforsale() public view returns (NFT_data[] memory) {
+    function nftsForSale() public view returns (NFT_data[] memory) {
         uint256 count = _tokenid.current() - _tokens_sold.current();
-        uint256 q = 0;
         NFT_data[] memory temp = new NFT_data[](count);
+        uint256 q = 0;
         for (uint256 i = 0; i < _tokenid.current(); i++) {
             if (map[i].owner == address(this) && map[i].outforsale) {
                 temp[q] = map[i];
@@ -176,8 +181,8 @@ contract NFTMarketplace is ERC721URIStorage {
         return temp;
     }
 
-    function stopsale(uint256 _id) public {
-        require(map[_id].outforsale, "not in sale");
+    function stopSale(uint256 _id) public {
+        require(map[_id].outforsale, "Not in sale");
         _transfer(address(this), msg.sender, _id);
         map[_id].owner = msg.sender;
         map[_id].outforsale = false;
