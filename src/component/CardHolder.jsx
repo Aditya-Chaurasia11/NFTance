@@ -13,7 +13,7 @@ const CardHolder = ({ array, activeDiv }) => {
 
   return (
     <div className="cardholder_container">
-      {filteredArray.map((item, index) => (
+      {filteredArray?.map((item, index) => (
         <Card key={index} data={item} />
       ))}
     </div>

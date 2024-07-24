@@ -127,15 +127,15 @@ const MediaUpload = () => {
       <ToastContainer />
 
       <button className="button_github" onClick={handleClickOpen}>
-        Sell Media
+        Create NFT
       </button>
 
       <Dialog open={open} onClose={handleClose}>
         <form onSubmit={handleFormSubmit}>
-          <DialogTitle>Upload Media</DialogTitle>
+          <DialogTitle>Upload NFT</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Please fill out the form to upload your media.
+              Please fill out the form to upload your NFT.
             </DialogContentText>
             <TextField
               autoFocus

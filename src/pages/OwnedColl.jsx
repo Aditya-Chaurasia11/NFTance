@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ownedColl.css";
 import CardHolder from "../component/CardHolder";
-import VideoUpload from "../component/VideoUpload";
+import VideoUpload from "../component/NFTUpload";
 import { useWeb3 } from "../api/contextapi";
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const OwnedColl = () => {
     const elements = data.split(",");
     const nfts = [];
 
-    for (let i = 0; i < elements.length; i += 9) {
+    for (let i = 0; i < elements.length; i += 10) {
       const nft = {
         tokenId: elements[i],
         owner: elements[i + 1],
@@ -31,6 +31,7 @@ const OwnedColl = () => {
         videoName: elements[i + 6],
         videoDescription: elements[i + 7],
         videoCategory: elements[i + 8],
+        mediType: elements[i + 9],
       };
       nfts.push(nft);
     }
@@ -44,7 +45,7 @@ const OwnedColl = () => {
       if (arrayToString) {
         const readableArray = parseDataToArray(arrayToString);
         setProdList(readableArray);
-        // console.log("Array of NFTs:", readableArray);
+        console.log("Array of NFTs:", readableArray);
       }
     } catch (error) {
       console.log(error);

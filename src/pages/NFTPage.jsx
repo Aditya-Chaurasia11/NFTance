@@ -224,7 +224,7 @@ const NFTPage = () => {
           <div className="videopage_right_lower_price">
             <p>Current price</p>
             <h2>
-              {prodList.price ? ethers.formatEther(prodList.price) : "0"} TFUEL
+              {prodList.price ? ethers.formatEther(prodList.price) : "0"} ETH
             </h2>
           </div>
           <div>

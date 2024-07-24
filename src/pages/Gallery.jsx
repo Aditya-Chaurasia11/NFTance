@@ -45,7 +45,7 @@ const Gallery = () => {
       const readableArray = parseDataToArray(arrayToString);
       setProdList(readableArray);
 
-      console.log("Array of NFTs:", readableArray);
+      // console.log("Array of NFTs:", readableArray);
     } catch (error) {
       console.log("error in gallery", error);
     }

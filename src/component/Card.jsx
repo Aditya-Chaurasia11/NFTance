@@ -5,23 +5,22 @@ import { ethers } from "ethers";
 import { useWeb3 } from "../api/contextapi";
 
 const Card = ({ data }) => {
-  const { account } = useWeb3();
+  const { account, contract } = useWeb3();
   const navigate = useNavigate();
   const [isVideo, setVideo] = useState(false);
 
   const handleClick = () => {
-    navigate(`/video/${data?.tokenId}`);
+    navigate(`/nft/${data?.tokenId}`);
   };
 
   useEffect(() => {
-    if (data.mediType.startsWith("video/")) setVideo(true);
-  }, []);
+    if (data?.mediType.startsWith("video/")) setVideo(true);
+  }, [contract]);
 
   return (
     <div className="card_container">
-      {/* <img src={data?.videoURL} alt={data.videoName} /> */}
-      {data.videoURL ? (
-        isVideo ? (
+      {data?.videoURL ? (
+        isVideo === true ? (
           <video width="100%">
             <source src={data?.videoURL} type="video/mp4" />
             Your browser does not support the video tag.
@@ -37,10 +36,10 @@ const Card = ({ data }) => {
         <div className="card_body_up">
           <p>
             <span>
-              {data.sender
-                ? `${data.sender.slice(0, 6)}...${data.sender.slice(
-                    data.sender.length - 4,
-                    data.sender.length
+              {data?.sender
+                ? `${data.sender?.slice(0, 6)}...${data.sender?.slice(
+                    data.sender?.length - 4,
+                    data.sender?.length
                   )}`
                 : "NA"}
             </span>
@@ -51,7 +50,7 @@ const Card = ({ data }) => {
           <p>
             <span>{data?.videoName.slice(0, 18)}</span>
           </p>
-          <p>{ethers.formatEther(data?.price)} TFUEL</p>
+          <p>{ethers.formatEther(data?.price)} ETH</p>
         </div>
       </div>
       <button className="card_gallery" onClick={handleClick}>

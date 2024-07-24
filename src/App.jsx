@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import VideoUpload from "./component/VideoUpload";
+import VideoUpload from "./component/NFTUpload";
 import Home from "./pages/Home";
 import Navbar from "./component/Navbar";
 import Gallery from "./pages/Gallery";
@@ -20,7 +20,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />}></Route>
             <Route path="/upload" element={<VideoUpload />}></Route>
             <Route path="/collection" element={<OwnedColl />}></Route>
-            <Route path="/video/:tid" element={<NFTPage />}></Route>
+            <Route path="/nft/:tid" element={<NFTPage />}></Route>
           </Routes>
           <ToastContainer />
         </BrowserRouter>

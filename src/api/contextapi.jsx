@@ -49,7 +49,7 @@ export const Web3provider = ({ children }) => {
 
           setAccount(address);
           // let contractAddress = "0x7fe89C4112BEF0E3CCDf71D77EC8cEb259fFCBA3";
-          let contractAddress = "0xf32c1Db76698221B9D3Fb7385cf2afcedCDE140F";
+          let contractAddress = "0xecFBc22B04Efc8f071443cB8ec54f4f13177B7Fa";
 
           
 
