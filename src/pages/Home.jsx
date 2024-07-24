@@ -1,6 +1,5 @@
-// import "./App.css";
 import { useState, useEffect } from "react";
-import landpage_img from "../assets/land_img.png";
+import landpage_img from "../assets/land_img (1).png";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
 import { useWeb3 } from "../api/contextapi";
@@ -23,7 +22,6 @@ function Home() {
     <div className="home_container">
       <div className="home_upper">
         <div className="home_container_left">
-          {/* <img className="star_img" src={star}></img>  */}
           <h1>Create, Trade, and Collect Unique NFTs</h1>
           <p>
             Mint, buy, sell, and explore unique NFTs on our platform,
