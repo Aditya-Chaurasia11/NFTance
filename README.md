@@ -81,7 +81,6 @@ Start the Game
     - Select NFT: Choose the NFT to buy.
     - Complete Purchase: Process the transaction to transfer ownership.
  
-![Gameplay](https://i.postimg.cc/vDRB9YG5/img44.jpg)
-
+[![img44.jpg](https://i.postimg.cc/vDRB9YG5/img44.jpg)](https://postimg.cc/dZBwcKk0)
 
   
