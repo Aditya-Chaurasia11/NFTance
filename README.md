@@ -1,27 +1,27 @@
 # NFTance
-This project is a decentralized video marketplace built on the Theta blockchain. It allows users to mint, buy, sell, and trade video NFTs. The platform leverages Web3 technologies to ensure transparency, security, and decentralized ownership of digital assets.
+Mint, buy, sell, and explore unique digital NFTs on our platform, providing secure and transparent ownership of digital video content with the power of Cardano zkEVM Testnet.
 ## Tech Stack
 ### Frontend
 - React.js
 - Material UI
 - CSS
 - Ethersjs
-- Theta SDK
 ### Backend
 - Solidity
 - IPFS (Pinata)
 - openzeppelin
+- cardona zkEVM Testnet
 
 
 ## Features of THETAVID:
 
-- Minting: Users can mint new video NFTs by uploading video files and metadata.
-- Trading: Users can list their video NFTs for sale, purchase, or trade.
+- Creation and Ownership: Users can easily create, manage, and monetize their own NFTs, ensuring true ownership.
+- Trading: Users can list their digital NFTs for sale, purchase, or trade.
+- Content Security: To protect intellectual property, the platform implements watermarks on NFT images and restricts video previews to a few seconds, reducing the risk of unauthorized screenshots and content theft.
 - Ownership Transfer: Automatic transfer of ownership upon transaction completion.
-- Preview: Allow users to view a preview of video NFTs for a few seconds before purchasing.
 
 ## Smart Contracts:
-- contract.sol: Smart contract for minting and managing video NFTs and handling marketplace functionalities like sale, purchase, or trade.
+- contract.sol: Smart contract for minting and managing digital NFTs and handling marketplace functionalities like sale, purchase, or trade.
 - OpenZeppelin: Implementation of the ERC721 standard for non-fungible tokens (NFTs).
 
 ## Run Locally
