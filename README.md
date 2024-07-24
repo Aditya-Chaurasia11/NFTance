@@ -29,13 +29,13 @@ Mint, buy, sell, and explore unique digital NFTs on our platform, providing secu
 Clone the project
 
 ```bash
-  git clone https://github.com/Aditya-Chaurasia11/THETAVID.git
+  git clone https://github.com/Aditya-Chaurasia11/NFTance.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd THETAVID
+  cd NFTance
 ```
 
 Install dependencies
@@ -52,7 +52,7 @@ Start the Game
 
 ## Project flow
 
-  Check this for video demo [Click here](https://youtu.be/g1x9t9aYz7w?si=orSo_TAYX3gDNyL4)
+  Check this for video demo [Click here](https://youtu.be/uGqcIgeqkOU?si=GHZoyqlQtYoJxEOD)
 
 - Video NFT Creation
     - Upload Video & Metadata: Users upload their video to IPFS and provide metadata like title and description.
