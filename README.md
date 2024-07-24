@@ -1,5 +1,5 @@
 # NFTance
-Mint, buy, sell, and explore unique digital NFTs on our platform, providing secure and transparent ownership of digital video content with the power of Cardano zkEVM Testnet.
+Mint, buy, sell, and explore unique digital NFTs on our platform, providing secure and transparent ownership of digital content with the power of Cardano zkEVM Testnet.
 ## Tech Stack
 ### Frontend
 - React.js
