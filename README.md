@@ -13,7 +13,7 @@ Mint, buy, sell, and explore unique digital NFTs on our platform, providing secu
 - cardona zkEVM Testnet
 
 
-## Features of THETAVID:
+## Features of NFTance:
 
 - Creation and Ownership: Users can easily create, manage, and monetize their own NFTs, ensuring true ownership.
 - Trading: Users can list their digital NFTs for sale, purchase, or trade.
