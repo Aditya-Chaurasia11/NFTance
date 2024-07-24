@@ -54,9 +54,9 @@ Start the Game
 
   Check this for video demo [Click here](https://youtu.be/uGqcIgeqkOU?si=GHZoyqlQtYoJxEOD)
 
-- Video NFT Creation
-    - Upload Video & Metadata: Users upload their video to IPFS and provide metadata like title and description.
-    - Mint NFT: The createNFT function in VideoNFT.sol mints the video and metadata as an NFT on the blockchain.
+- NFT Creation
+    - Upload Video or image & Metadata: Users upload their video or image to IPFS and provide metadata like title and description.
+    - Mint NFT: The createNFT function in contract.sol mints the video or image and metadata as an NFT on the blockchain.
 
 ![Gameplay](https://i.postimg.cc/VkCq3vSP/img11.jpg.jpg)
 
@@ -71,6 +71,7 @@ Start the Game
 - Marketplace Browsing
     - Browse NFTs: Users explore available NFTs using filter options.
     - Preview Video: Users watch a short preview of the video before purchasing.
+    - Watermarks: Images are watermarked to prevent unauthorized use while maintaining visual quality.
 
  ![Gameplay](https://i.postimg.cc/8kYrNDgp/img33.jpg)
 
