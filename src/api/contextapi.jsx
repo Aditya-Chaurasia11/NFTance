@@ -39,7 +39,7 @@ export const Web3provider = ({ children }) => {
             } catch (switchError) {
               if (switchError.code === 4902) {
                 alert(
-                  "Theta network not available in your MetaMask. Please add it manually."
+                  "cardona zkEVM network not available in your MetaMask. Please add it manually."
                 );
               } else {
                 console.error("Failed to switch network:", switchError);
