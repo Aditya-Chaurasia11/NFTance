@@ -28,18 +28,18 @@ export const Web3provider = ({ children }) => {
           const signer = await provider.getSigner();
           const address = await signer.getAddress();
 
-          // Check if the current network is theta (chainId: 0x16d)
+          // Check if the current network is sepolia
           const network = await provider.getNetwork();
-          if (network.chainId !== 0x98a) {
+          if (network.chainId !== 0xaa36a7) {
             try {
               await window.ethereum.request({
                 method: "wallet_switchEthereumChain",
-                params: [{ chainId: "0x98a" }], // theta chainId
+                params: [{ chainId: "0xaa36a7" }],
               });
             } catch (switchError) {
               if (switchError.code === 4902) {
                 alert(
-                  "Theta network not available in your MetaMask. Please add it manually."
+                  "Sepolia network not available in your MetaMask. Please add it manually."
                 );
               } else {
                 console.error("Failed to switch network:", switchError);
@@ -49,9 +49,7 @@ export const Web3provider = ({ children }) => {
 
           setAccount(address);
           // let contractAddress = "0x7fe89C4112BEF0E3CCDf71D77EC8cEb259fFCBA3";
-          let contractAddress = "0xecFBc22B04Efc8f071443cB8ec54f4f13177B7Fa";
-
-          
+          let contractAddress = "0x45B1a5f9e7855ce6C6C504b7F7e60e837F42BC00";
 
           const contract = new ethers.Contract(
             contractAddress,
@@ -69,7 +67,7 @@ export const Web3provider = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
-  }, [account,contract]);
+  }, [account, contract]);
 
   return (
     <Web3Context.Provider

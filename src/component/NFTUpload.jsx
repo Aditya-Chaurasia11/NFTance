@@ -69,6 +69,7 @@ const MediaUpload = () => {
         price: priceInWei.toString(),
         cat: category ? category : "other",
       };
+      
       setPinataURL(data.media);
 
       if (response && contract) {
