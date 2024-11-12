@@ -1,27 +1,27 @@
-# THETAVID
-This project is a decentralized video marketplace built on the Theta blockchain. It allows users to mint, buy, sell, and trade video NFTs. The platform leverages Web3 technologies to ensure transparency, security, and decentralized ownership of digital assets.
+# NFTance
+Mint, buy, sell, and explore unique digital NFTs on our platform, providing secure and transparent ownership of digital content with the power of Cardano zkEVM Testnet.
 ## Tech Stack
 ### Frontend
 - React.js
 - Material UI
 - CSS
 - Ethersjs
-- Theta SDK
 ### Backend
 - Solidity
 - IPFS (Pinata)
 - openzeppelin
+- cardona zkEVM Testnet
 
 
-## Features of THETAVID:
+## Features of NFTance:
 
-- Minting: Users can mint new video NFTs by uploading video files and metadata.
-- Trading: Users can list their video NFTs for sale, purchase, or trade.
+- Creation and Ownership: Users can easily create, manage, and monetize their own NFTs, ensuring true ownership.
+- Trading: Users can list their digital NFTs for sale, purchase, or trade.
+- Content Security: To protect intellectual property, the platform implements watermarks on NFT images and restricts video previews to a few seconds, reducing the risk of unauthorized screenshots and content theft.
 - Ownership Transfer: Automatic transfer of ownership upon transaction completion.
-- Preview: Allow users to view a preview of video NFTs for a few seconds before purchasing.
 
 ## Smart Contracts:
-- contract.sol: Smart contract for minting and managing video NFTs and handling marketplace functionalities like sale, purchase, or trade.
+- contract.sol: Smart contract for minting and managing digital NFTs and handling marketplace functionalities like sale, purchase, or trade.
 - OpenZeppelin: Implementation of the ERC721 standard for non-fungible tokens (NFTs).
 
 ## Run Locally
@@ -29,13 +29,13 @@ This project is a decentralized video marketplace built on the Theta blockchain.
 Clone the project
 
 ```bash
-  git clone https://github.com/Aditya-Chaurasia11/THETAVID.git
+  git clone https://github.com/Aditya-Chaurasia11/NFTance.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd THETAVID
+  cd NFTance
 ```
 
 Install dependencies
@@ -52,27 +52,28 @@ Start the Game
 
 ## Project flow
 
-  Check this for video demo [Click here](https://youtu.be/g1x9t9aYz7w?si=orSo_TAYX3gDNyL4)
+  Check this for video demo [Click here](https://youtu.be/rfjsWe0nXk8?si=BVPZeXnx-LAJh-EB)
 
-- Video NFT Creation
-    - Upload Video & Metadata: Users upload their video to IPFS and provide metadata like title and description.
-    - Mint NFT: The createNFT function in VideoNFT.sol mints the video and metadata as an NFT on the blockchain.
+- NFT Creation
+    - Upload Video or image & Metadata: Users upload their video or image to IPFS and provide metadata like title and description.
+    - Mint NFT: The createNFT function in contract.sol mints the video or image and metadata as an NFT on the blockchain.
 
-![Gameplay](https://i.postimg.cc/ZK75BSJK/img1.jpg)
+![Gameplay](https://i.postimg.cc/VkCq3vSP/img11.jpg.jpg)
 
 
 - Listing NFT for Sale
     - Set Sale Price: Users set the price for their NFT.
     - List on Marketplace: The Mapitem function in Marketplace.sol lists the NFT and marks it for sale.
 
-![Gameplay](https://i.postimg.cc/Gh5b3xj4/img2.jpg)
+![Gameplay](https://i.postimg.cc/RFXKcnYK/img22.jpg)
 
 
 - Marketplace Browsing
     - Browse NFTs: Users explore available NFTs using filter options.
     - Preview Video: Users watch a short preview of the video before purchasing.
+    - Watermarks: Images are watermarked to prevent unauthorized use while maintaining visual quality.
 
- ![Gameplay](https://i.postimg.cc/Wb32PH0R/img3.jpg)
+ ![Gameplay](https://i.postimg.cc/8kYrNDgp/img33.jpg)
 
 
 
@@ -80,7 +81,6 @@ Start the Game
     - Select NFT: Choose the NFT to buy.
     - Complete Purchase: Process the transaction to transfer ownership.
  
-![Gameplay](https://i.postimg.cc/Xq24CfSD/img4.jpg)
-
+[![img44.jpg](https://i.postimg.cc/vDRB9YG5/img44.jpg)](https://postimg.cc/dZBwcKk0)
 
   
