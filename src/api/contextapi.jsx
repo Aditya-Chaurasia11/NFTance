@@ -39,11 +39,7 @@ export const Web3provider = ({ children }) => {
             } catch (switchError) {
               if (switchError.code === 4902) {
                 alert(
-<<<<<<< HEAD
-                  "Sepolia network not available in your MetaMask. Please add it manually."
-=======
                   "cardona zkEVM network not available in your MetaMask. Please add it manually."
->>>>>>> fd42bc8edf9a3dddb44505d3cff3b11e50810138
                 );
               } else {
                 console.error("Failed to switch network:", switchError);
